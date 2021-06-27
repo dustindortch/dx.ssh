@@ -1,0 +1,21 @@
+---
+- name: ssh establish key-based authentication
+  become: false
+  hosts: all
+  gather_facts: false
+
+  vars_files:
+    - ssh_vars.yml
+  
+  tasks:
+    - name: ssh make key directory
+      file:
+        path: ~/.ssh
+        state: directory
+        mode: 0700
+
+    - name: ssh public key upload
+      copy:
+        src: ./.ssh/id_rsa.pub
+        dest: ~/.ssh/authorized_keys
+        mode: 0600
