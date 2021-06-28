@@ -1,6 +1,6 @@
 # dx.ssh
 
-Setup SSH Key-Based Authentication
+Setup SSH Key-Based Authentication with Ansible
 
 ## Summary
 
@@ -13,6 +13,7 @@ Using key-based authentication streamlines working with remote hosts via Ansible
 ## NOTE
 
 This will remove any existing keys from the `~/authorized_keys` files.
+
 ## Execution
 
 Modify the `ssh_vars.yml` file to contain the proper username and comment out the `ansible_ssh_private_key_file` property.
